@@ -1,5 +1,7 @@
 # fix-es-imports
 
+Fixes your ES import paths - from Node-style to explicit filenames
+
 ## What
 
 Turns:
