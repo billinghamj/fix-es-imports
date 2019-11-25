@@ -16,7 +16,7 @@ for (const codePath of codePaths) {
 	const newCode = origCode.replace(moduleDeclRegex, (str, start, origTarget, end) => {
 		if (!origTarget.match(/^\.\.?\//)) {
 			if (origTarget.match(/^[^@][^/\n]*\/[^/\n]+/)) {
-				console.warn('unsupported: package file reference detected');
+				console.warn('\nunsupported: package file reference detected');
 				console.warn(codePath);
 				console.warn(str);
 			}
