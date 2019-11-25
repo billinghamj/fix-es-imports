@@ -1,6 +1,6 @@
 {
   "name": "fix-es-imports",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Fixes your ES import paths - from Node-style to explicit filenames",
   "homepage": "https://github.com/billinghamj/fix-es-imports",
   "bugs": "https://github.com/billinghamj/fix-es-imports/issues",
