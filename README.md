@@ -59,7 +59,11 @@ The reason for the use of regex rather than e.g. Babel is because we want to lea
 
 If you're keen to implement a better approach, please open a PR!
 
-### JSON modules
+### Non-JS modules
+
+```js
+import foo from './foo.json';
+```
 
 At this stage, using module declarations with non-JS files is [still experimental](https://nodejs.org/api/esm.html#esm_experimental_json_modules) and the syntax for doing this will almost certainly change due to [security issues affecting the web](https://github.com/w3c/webcomponents/issues/839).
 
