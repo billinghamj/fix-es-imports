@@ -5,7 +5,7 @@ import resolve from 'resolve';
 import glob from 'glob';
 import fs from 'fs';
 
-const moduleDeclRegex = /^((?:import|export)\s[^'";]*['"])(\.\.?\/[^'"]+)(['"];)$/gm;
+const moduleDeclRegex = /^((?:import|export)\s[^'";]*['"])([^'"]+)(['"];)$/gm;
 
 const codePaths = glob.sync('**/*.mjs');
 
@@ -13,7 +13,10 @@ for (const codePath of codePaths) {
 	const origCode = fs.readFileSync(codePath, 'utf8');
 	const baseDir = path.dirname(codePath);
 
-	const newCode = origCode.replace(moduleDeclRegex, (_, start, origTarget, end) => {
+	const newCode = origCode.replace(moduleDeclRegex, (str, start, origTarget, end) => {
+		if (!origTarget.match(/^\.\.?\//))
+			return str;
+
 		const newTarget = rewriteTarget(origTarget, baseDir);
 
 		return `${start}${newTarget}${end}`;
