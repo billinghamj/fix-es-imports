@@ -44,6 +44,8 @@ This tool is for you.
 
 ## Caveats
 
+### Regex-based parsing
+
 Currently this tool is implemented with a fairly primitive regex, rather than any kind of real parser. As such, it is not expected to work in every situation.
 
 Some cases known not to work:
@@ -56,6 +58,12 @@ Some cases known not to work:
 The reason for the use of regex rather than e.g. Babel is because we want to leave every other part of the file exactly as-is, with absolutely no unnecessary changes.
 
 If you're keen to implement a better approach, please open a PR!
+
+### JSON modules
+
+At this stage, using module declarations with non-JS files is [still experimental](https://nodejs.org/api/esm.html#esm_experimental_json_modules) and the syntax for doing this will almost certainly change due to [security issues affecting the web](https://github.com/w3c/webcomponents/issues/839).
+
+This tool will work with such files if the correct flag is enabled, but you should really look to load these without module declarations until the final syntax is determined.
 
 ## Support
 
