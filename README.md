@@ -65,6 +65,22 @@ At this stage, using module declarations with non-JS files is [still experimenta
 
 This tool will work with such files if the correct flag is enabled, but you should really look to load these without module declarations until the final syntax is determined.
 
+### Package files
+
+```js
+import fs from 'mz/fs';
+```
+
+Not currently supported. Each instance found will be outputted to stderr. You will need to manually change these.
+
+In this case, to:
+
+```js
+import fs from 'mz/fs.js';
+```
+
+If you can, best not to use this kind of import for now. Likely to result in unexpected breaking changes by package developers unfamiliar with the explicit filename rules.
+
 ## Support
 
 Please open an issue on this repository.
