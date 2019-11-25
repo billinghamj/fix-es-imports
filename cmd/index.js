@@ -5,7 +5,7 @@ import resolve from 'resolve';
 import glob from 'glob';
 import fs from 'fs';
 
-const moduleDeclRegex = /^((?:import|export)\s[^';]+')(\.\.?\/[^']+)(';)$/gm;
+const moduleDeclRegex = /^((?:import|export)\s[^'";]+['"])(\.\.?\/[^'"]+)(['"];)$/gm;
 
 const codePaths = glob.sync('**/*.mjs');
 
