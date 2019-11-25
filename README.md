@@ -42,6 +42,21 @@ And now Node 13.2.0 has shipped. ES module support is no longer experimental. Yo
 
 This tool is for you.
 
+## Caveats
+
+Currently this tool is implemented with a fairly primitive regex, rather than any kind of real parser. As such, it is not expected to work in every situation.
+
+Some cases known not to work:
+
+- inclusion of any quote characters within the path (even if escaped)
+- anything prior to the declaration on the same line (including whitespace)
+- declarations not containing any whitespace (e.g. `import'x';`)
+- declarations where the path string is not immediately followed by a semicolon and the end of the line
+
+The reason for the use of regex rather than e.g. Babel is because we want to leave every other part of the file exactly as-is, with absolutely no unnecessary changes.
+
+If you're keen to implement a better approach, please open a PR!
+
 ## Support
 
 Please open an issue on this repository.
