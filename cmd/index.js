@@ -7,7 +7,8 @@ import fs from 'fs';
 
 const moduleDeclRegex = /^((?:import|export)\s[^'";]*['"])([^'"]+)(['"];)$/gm;
 
-const codePaths = glob.sync('**/*.mjs');
+const paths = process.argv.slice(2);
+const codePaths = paths.length ? paths : glob.sync('**/*.mjs');
 
 for (const codePath of codePaths) {
 	const origCode = fs.readFileSync(codePath, 'utf8');
