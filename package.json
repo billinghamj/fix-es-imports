@@ -13,7 +13,7 @@
     "url": "https://github.com/billinghamj/fix-es-imports.git"
   },
   "dependencies": {
-    "glob": "^7.1.6",
+    "glob": "^8.0.1",
     "resolve": "^1.12.0"
   },
   "keywords": [
